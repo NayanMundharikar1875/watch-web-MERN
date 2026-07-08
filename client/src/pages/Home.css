@@ -1,0 +1,590 @@
+/* Home.css - Clean single header version */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0a0c10;
+    color: #eef2ff;
+    overflow-x: hidden;
+    line-height: 1.5;
+}
+
+/* Parallax / Background Image Effect */
+.bg-hero {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background-image: url('https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?auto=compress&cs=tinysrgb&w=1600');
+    background-size: cover;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+    filter: brightness(0.35) contrast(1.05);
+}
+
+/* subtle overlay gradient for text readability */
+.overlay-dark {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 30%, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.75) 100%);
+    z-index: -1;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+/* Replace the navbar section in your Home.css with this */
+
+/* header / navigation - Single header only */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.logo h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, #f5e7c8, #d4af7a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #f0f0f0;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: 0.25s ease;
+    letter-spacing: 0.3px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #d4af7a;
+}
+
+.nav-links a.active {
+    position: relative;
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #d4af7a;
+}
+
+/* Auth buttons section - clean and simple */
+.nav-auth {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.login-btn, .register-btn, .logout-btn {
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 6px 18px;
+    border-radius: 30px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.login-btn {
+    color: #d4af7a;
+    border: 1px solid rgba(212, 175, 122, 0.5);
+    background: transparent;
+}
+
+.login-btn:hover {
+    background: rgba(212, 175, 122, 0.1);
+    transform: translateY(-2px);
+}
+
+.register-btn {
+    background: #d4af7a;
+    color: #0a0c10;
+    border: none;
+}
+
+.register-btn:hover {
+    background: #e6c28b;
+    transform: translateY(-2px);
+}
+
+.logout-btn {
+    background: rgba(220, 53, 69, 0.2);
+    border: 1px solid rgba(220, 53, 69, 0.5);
+    color: #dc3545;
+}
+
+.logout-btn:hover {
+    background: rgba(220, 53, 69, 0.3);
+    transform: translateY(-2px);
+}
+
+.user-name {
+    color: #d4af7a;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        gap: 18px;
+    }
+    .nav-links {
+        gap: 1.2rem;
+        justify-content: center;
+    }
+    .nav-auth {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 520px) {
+    .nav-links {
+        gap: 0.8rem;
+    }
+    .nav-links a {
+        font-size: 0.8rem;
+    }
+    .login-btn, .register-btn, .logout-btn {
+        padding: 4px 12px;
+        font-size: 0.8rem;
+    }
+    .user-name {
+        font-size: 0.8rem;
+    }
+}
+/* hero section */
+.hero {
+    padding: 110px 0 80px;
+    max-width: 680px;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(212, 175, 122, 0.18);
+    backdrop-filter: blur(6px);
+    padding: 6px 16px;
+    border-radius: 40px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #d4af7a;
+    margin-bottom: 24px;
+    border: 0.5px solid rgba(212, 175, 122, 0.4);
+}
+
+.hero h2 {
+    font-size: 4rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+
+.hero h2 span {
+    color: #d4af7a;
+    border-bottom: 2px solid #d4af7a;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #cfddee;
+    margin-bottom: 36px;
+    max-width: 540px;
+}
+
+.btn-group {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background: #d4af7a;
+    border: none;
+    padding: 14px 36px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #0a0c10;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.25s;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.btn-primary:hover {
+    background: #e6c28b;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1.5px solid #d4af7a;
+    padding: 12px 34px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #d4af7a;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.btn-outline:hover {
+    background: rgba(212, 175, 122, 0.1);
+    transform: translateY(-2px);
+}
+
+/* featured watches section */
+.section-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin: 70px 0 20px;
+    font-weight: 600;
+}
+
+.section-sub {
+    text-align: center;
+    color: #b9c7d9;
+    margin-bottom: 48px;
+    font-size: 1rem;
+}
+
+.watch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 35px;
+    margin-bottom: 80px;
+}
+
+.watch-card {
+    background: rgba(15, 18, 24, 0.7);
+    backdrop-filter: blur(12px);
+    border-radius: 32px;
+    padding: 28px 20px 24px;
+    transition: 0.3s ease;
+    border: 1px solid rgba(212, 175, 122, 0.2);
+    text-align: center;
+    cursor: pointer;
+}
+
+.watch-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(212, 175, 122, 0.6);
+    background: rgba(20, 24, 32, 0.85);
+    box-shadow: 0 20px 35px -12px rgba(0,0,0,0.5);
+}
+
+.watch-img {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: #d4af7a;
+}
+
+.watch-card h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.watch-desc {
+    color: #b9c7d9;
+    font-size: 0.9rem;
+    margin: 12px 0;
+}
+
+.price {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #d4af7a;
+    margin: 16px 0 12px;
+}
+
+.old-price {
+    font-size: 0.9rem;
+    text-decoration: line-through;
+    color: #8f9bb3;
+    margin-left: 8px;
+    font-weight: 400;
+}
+
+.card-btn {
+    background: transparent;
+    border: 1px solid #d4af7a;
+    padding: 8px 24px;
+    border-radius: 30px;
+    color: #d4af7a;
+    font-weight: 500;
+    margin-top: 12px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.card-btn:hover {
+    background: #d4af7a;
+    color: #0a0c10;
+}
+
+/* testimonials / brand story */
+.story-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(8px);
+    border-radius: 48px;
+    padding: 48px 40px;
+    margin: 60px 0 70px;
+    border: 1px solid rgba(212, 175, 122, 0.25);
+}
+
+.story-text {
+    flex: 1;
+}
+
+.story-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.story-text p {
+    color: #cfddee;
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+.signature {
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: #d4af7a;
+}
+
+.story-stats {
+    flex: 0.8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #d4af7a;
+}
+
+/* newsletter */
+.newsletter {
+    background: linear-gradient(112deg, rgba(0,0,0,0.7) 0%, rgba(20,16,10,0.8) 100%);
+    border-radius: 60px;
+    padding: 60px 40px;
+    text-align: center;
+    margin: 40px 0 70px;
+    backdrop-filter: blur(4px);
+}
+
+.newsletter h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.newsletter p {
+    margin-bottom: 32px;
+    color: #cbd5e6;
+}
+
+.news-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.news-form input {
+    flex: 1;
+    padding: 14px 24px;
+    border-radius: 60px;
+    border: none;
+    background: #1e232c;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    border: 1px solid rgba(212,175,122,0.4);
+}
+
+.news-form input:focus {
+    border-color: #d4af7a;
+}
+
+.news-form button {
+    background: #d4af7a;
+    border: none;
+    padding: 14px 36px;
+    border-radius: 60px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.news-form button:hover {
+    background: #e6c28b;
+    transform: translateY(-2px);
+}
+
+/* footer */
+footer {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 48px 0 32px;
+    margin-top: 40px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.footer-col h4 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #e6cfa0;
+}
+
+.footer-col p, .footer-col a {
+    color: #aaaec2;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    transition: 0.2s;
+}
+
+.footer-col a:hover {
+    color: #d4af7a;
+}
+
+.social-icons i {
+    font-size: 1.4rem;
+    margin-right: 16px;
+    color: #cbd5e6;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.social-icons i:hover {
+    color: #d4af7a;
+    transform: scale(1.1);
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 48px;
+    padding-top: 20px;
+    font-size: 0.8rem;
+    color: #7c7f92;
+}
+
+/* responsive */
+@media (max-width: 800px) {
+    .container {
+        padding: 0 20px;
+    }
+    .hero h2 {
+        font-size: 2.8rem;
+    }
+    .navbar {
+        flex-direction: column;
+        gap: 18px;
+    }
+    .nav-links {
+        gap: 1.2rem;
+        justify-content: center;
+    }
+    .nav-icons {
+        justify-content: center;
+    }
+    .story-section {
+        flex-direction: column;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .watch-grid {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 520px) {
+    .hero {
+        padding: 60px 0 40px;
+    }
+    .btn-group {
+        gap: 12px;
+    }
+    .hero h2 {
+        font-size: 2rem;
+    }
+    .watch-card h3 {
+        font-size: 1.2rem;
+    }
+    .price {
+        font-size: 1.2rem;
+    }
+    .newsletter {
+        padding: 40px 20px;
+    }
+    .newsletter h3 {
+        font-size: 1.5rem;
+    }
+    .nav-links {
+        gap: 0.8rem;
+    }
+    .nav-links a {
+        font-size: 0.8rem;
+    }
+}
